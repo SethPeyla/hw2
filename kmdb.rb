@@ -70,7 +70,10 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
-Model.destory_all
+Movie.destory_all
+Actor.destory_all
+Role.destory_all
+Studio.destory_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -141,6 +144,7 @@ Model.destory_all
 # see code in db/migrate/*_create_studios.rb
 
 # 4. in terminal, executed the migration file
+
 # rails db:migrate
 
 # 5. checked the schema to confirm the change
@@ -152,14 +156,104 @@ Model.destory_all
 
 # 1. insert rows in movies table.
 
-# count how many rows in movies table before inserts
-puts "Movies: #{Movie.all.count}"
+studio = Studio.new
+studio["name"] = "Warner Brothers"
+studio.save
 
-# salesperson = Salesperson.new
-# salesperson["first_name"] = "Benjamin"
-# salesperson["last_name"] = "Block"
-# salesperson["email"] = "ben@test.com"
-# salesperson.save
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = 2005
+movie["rated"] = "PG-13"
+movie["studio_id"] = 1
+movie.save
+
+movie = Movie.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = 2008
+movie["rated"] = "PG-13"
+movie["studio_id"] = 1
+movie.save
+
+movie = Movie.new
+movie["title"] = "The Dark Knight Rises"
+movie["year_released"] = 2012
+movie["rated"] = "PG-13"
+movie["studio_id"] = 1
+movie.save
+
+actor = Actor.new
+actor["name"] = "Christian Bale"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Michael Caine"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Liam Neeson"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Katie Holmes"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Gary Oldman"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Heath Ledger"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Aaron Eckhart"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Maggie Gyllenhaal"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Tom Hardy"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Joseph Gordon-Levitt"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Anne Hathaway"
+actor.save
+
+role = Role.new
+role["movie_id"] = 1
+role["character_id"] = 1
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["movie_id"] = 1
+role["character_id"] = 2
+role["character_name"] = "Alfred"
+role.save
+
+role = Role.new
+role["movie_id"] = 1
+role["character_id"] = 3
+role["character_name"] = "Ra's Al Ghul"
+role.save
+
+role = Role.new
+role["movie_id"] = 1
+role["character_id"] = 4
+role["character_name"] = "Rachel Dawes"
+role.save
+
+role = Role.new
+role["movie_id"] = 1
+role["character_id"] = 5
+role["character_name"] = "Commissioner Gordon"
+role.save
 
 # Prints a header for the movies output
 puts "Movies"
@@ -168,6 +262,11 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
+for movie in movies_all
+    puts"#{title} #{year_released} #{rated} 
+
+end
 
 # Prints a header for the cast output
 puts ""
