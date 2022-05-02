@@ -154,8 +154,6 @@ Studio.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-# 1. insert rows in movies table.
-
 studio = Studio.new
 studio["name"] = "Warner Brothers"
 studio.save
@@ -345,4 +343,9 @@ puts ""
 roles_all = Role.all
 
 for roles in roles_all
+    movie_title = Movie.find_by({"id" => roles["movie_id"]})
+    actor_name = Actor.find_by({"id" => roles["actor_id"]})
+    # puts movie_title.inspect
+    # puts actor_name.inspect
+    puts "#{movie_title["title"]} #{actor_name["name"]} #{roles["character_name"]}"
 end   
