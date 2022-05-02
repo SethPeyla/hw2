@@ -70,10 +70,10 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
-Movie.destory_all
-Actor.destory_all
-Role.destory_all
-Studio.destory_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+Studio.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -160,99 +160,159 @@ studio = Studio.new
 studio["name"] = "Warner Brothers"
 studio.save
 
-movie = Movie.new
-movie["title"] = "Batman Begins"
-movie["year_released"] = 2005
-movie["rated"] = "PG-13"
-movie["studio_id"] = 1
-movie.save
+BB = Movie.new
+BB["title"] = "Batman Begins"
+BB["year_released"] = 2005
+BB["rated"] = "PG-13"
+BB["studio_id"] = studio["id"]
+BB.save
 
-movie = Movie.new
-movie["title"] = "The Dark Knight"
-movie["year_released"] = 2008
-movie["rated"] = "PG-13"
-movie["studio_id"] = 1
-movie.save
+TDK = Movie.new
+TDK["title"] = "The Dark Knight"
+TDK["year_released"] = 2008
+TDK["rated"] = "PG-13"
+TDK["studio_id"] = studio["id"]
+TDK.save
 
-movie = Movie.new
-movie["title"] = "The Dark Knight Rises"
-movie["year_released"] = 2012
-movie["rated"] = "PG-13"
-movie["studio_id"] = 1
-movie.save
+TDKR = Movie.new
+TDKR["title"] = "The Dark Knight Rises"
+TDKR["year_released"] = 2012
+TDKR["rated"] = "PG-13"
+TDKR["studio_id"] = studio["id"]
+TDKR.save
 
-actor = Actor.new
-actor["name"] = "Christian Bale"
-actor.save
+CB = Actor.new
+CB["name"] = "Christian Bale"
+CB.save
 
-actor = Actor.new
-actor["name"] = "Michael Caine"
-actor.save
+MC = Actor.new
+MC["name"] = "Michael Caine"
+MC.save
 
-actor = Actor.new
-actor["name"] = "Liam Neeson"
-actor.save
+LN = Actor.new
+LN["name"] = "Liam Neeson"
+LN.save
 
-actor = Actor.new
-actor["name"] = "Katie Holmes"
-actor.save
+KH = Actor.new
+KH["name"] = "Katie Holmes"
+KH.save
 
-actor = Actor.new
-actor["name"] = "Gary Oldman"
-actor.save
+GO = Actor.new
+GO["name"] = "Gary Oldman"
+GO.save
 
-actor = Actor.new
-actor["name"] = "Heath Ledger"
-actor.save
+HL = Actor.new
+HL["name"] = "Heath Ledger"
+HL.save
 
-actor = Actor.new
-actor["name"] = "Aaron Eckhart"
-actor.save
+AE = Actor.new
+AE["name"] = "Aaron Eckhart"
+AE.save
 
-actor = Actor.new
-actor["name"] = "Maggie Gyllenhaal"
-actor.save
+MG = Actor.new
+MG["name"] = "Maggie Gyllenhaal"
+MG.save
 
-actor = Actor.new
-actor["name"] = "Tom Hardy"
-actor.save
+TH = Actor.new
+TH["name"] = "Tom Hardy"
+TH.save
 
-actor = Actor.new
-actor["name"] = "Joseph Gordon-Levitt"
-actor.save
+JGL = Actor.new
+JGL["name"] = "Joseph Gordon-Levitt"
+JGL.save
 
-actor = Actor.new
-actor["name"] = "Anne Hathaway"
-actor.save
+AH = Actor.new
+AH["name"] = "Anne Hathaway"
+AH.save
 
 role = Role.new
-role["movie_id"] = 1
-role["character_id"] = 1
+role["movie_id"] = BB["id"]
+role["actor_id"] = CB["id"]
 role["character_name"] = "Bruce Wayne"
 role.save
 
 role = Role.new
-role["movie_id"] = 1
-role["character_id"] = 2
+role["movie_id"] = BB["id"]
+role["actor_id"] = MC["id"]
 role["character_name"] = "Alfred"
 role.save
 
 role = Role.new
-role["movie_id"] = 1
-role["character_id"] = 3
+role["movie_id"] = BB["id"]
+role["actor_id"] = LN["id"]
 role["character_name"] = "Ra's Al Ghul"
 role.save
 
 role = Role.new
-role["movie_id"] = 1
-role["character_id"] = 4
+role["movie_id"] = BB["id"]
+role["actor_id"] = KH["id"]
 role["character_name"] = "Rachel Dawes"
 role.save
 
 role = Role.new
-role["movie_id"] = 1
-role["character_id"] = 5
+role["movie_id"] = BB["id"]
+role["actor_id"] = GO["id"]
 role["character_name"] = "Commissioner Gordon"
+role.save
+
+role = Role.new
+role["movie_id"] = TDK["id"]
+role["actor_id"] = CB["id"]
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["movie_id"] = TDK["id"]
+role["actor_id"] = HL["id"]
+role["character_name"] = "Joker"
+role.save
+
+role = Role.new
+role["movie_id"] = TDK["id"]
+role["actor_id"] = AE["id"]
+role["character_name"] = "Harvey Dent"
+role.save
+
+role = Role.new
+role["movie_id"] = TDK["id"]
+role["actor_id"] = MC["id"]
+role["character_name"] = "Alfred"
+role.save
+
+role = Role.new
+role["movie_id"] = TDK["id"]
+role["actor_id"] = MG["id"]
+role["character_name"] = "Rachel Dawes"
+role.save
+
+role = Role.new
+role["movie_id"] = TDKR["id"]
+role["actor_id"] = CB["id"]
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["movie_id"] = TDKR["id"]
+role["actor_id"] = GO["id"]
+role["character_name"] = "Commissioner Gordon"
+role.save
+
+role = Role.new
+role["movie_id"] = TDKR["id"]
+role["actor_id"] = TH["id"]
+role["character_name"] = "Bane"
+role.save
+
+role = Role.new
+role["movie_id"] = TDKR["id"]
+role["actor_id"] = JGL["id"]
+role["character_name"] = "John Blake"
+role.save
+
+role = Role.new
+role["movie_id"] = TDKR["id"]
+role["actor_id"] = AH["id"]
+role["character_name"] = "Selina Kyle"
 role.save
 
 # Prints a header for the movies output
@@ -262,10 +322,14 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+movies_all = Movie.all
 
 for movie in movies_all
-    puts"#{title} #{year_released} #{rated} 
-
+    title = movie["title"]
+    year_released = movie["year_released"]
+    rated = movie["rated"]
+    studio = Movie.find_by({"studio_id" => 4})
+    puts"#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{movie["studio_id"]}"
 end
 
 # Prints a header for the cast output
@@ -276,3 +340,5 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+
