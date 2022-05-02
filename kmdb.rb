@@ -74,6 +74,8 @@ Model.destory_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
+# - generate model and table for movies
+
 # 1. in terminal, generated a model and table for Movie
 # rails generate model Movie
 
@@ -90,10 +92,74 @@ Model.destory_all
 # 5. checked the schema to confirm the change
 # - db/schema.rb
 
+# - generate model and table for actors
+
+# 1. in terminal, generated a model and table for Actor
+# rails generate model Actor
+
+# 2. opened newly generated files
+# - app/models/actor.rb
+# - db/migrate/*_create_actors.rb
+
+# 3. in the db/migrate file, added relevant columns matching our domain model
+# see code in db/migrate/*_create_actors.rb
+
+# 4. in terminal, executed the migration file
+# rails db:migrate
+
+# 5. checked the schema to confirm the change
+# - db/schema.rb
+
+# - generate model and table for roles
+
+# 1. in terminal, generated a model and table for Role
+# rails generate model Role
+
+# 2. opened newly generated files
+# - app/models/role.rb
+# - db/migrate/*_create_roles.rb
+
+# 3. in the db/migrate file, added relevant columns matching our domain model
+# see code in db/migrate/*_create_roles.rb
+
+# 4. in terminal, executed the migration file
+# rails db:migrate
+
+# 5. checked the schema to confirm the change
+# - db/schema.rb
+
+# - generate model and table for studios
+
+# 1. in terminal, generated a model and table for Studio
+# rails generate model Studio
+
+# 2. opened newly generated files
+# - app/models/studio.rb
+# - db/migrate/*_create_studios.rb
+
+# 3. in the db/migrate file, added relevant columns matching our domain model
+# see code in db/migrate/*_create_studios.rb
+
+# 4. in terminal, executed the migration file
+# rails db:migrate
+
+# 5. checked the schema to confirm the change
+# - db/schema.rb
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+# 1. insert rows in movies table.
+
+# count how many rows in movies table before inserts
+puts "Movies: #{Movie.all.count}"
+
+# salesperson = Salesperson.new
+# salesperson["first_name"] = "Benjamin"
+# salesperson["last_name"] = "Block"
+# salesperson["email"] = "ben@test.com"
+# salesperson.save
 
 # Prints a header for the movies output
 puts "Movies"
